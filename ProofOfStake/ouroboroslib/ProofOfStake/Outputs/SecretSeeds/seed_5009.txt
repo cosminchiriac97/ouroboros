@@ -1,0 +1,12 @@
+epoch: 1 
+slot: 5 
+seed: AAtN2k86MJmrAA== 
+epoch: 2 
+slot: 5 
+seed: ACTWYEaAfeXpAA== 
+epoch: 3 
+slot: 5 
+seed: APhTJjRvVxGrAA== 
+epoch: 4 
+slot: 5 
+seed: AMAoDEh+bFpoAA== 
