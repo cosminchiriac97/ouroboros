@@ -1,0 +1,12 @@
+{
+  "address": "http://127.0.0.1:5002/",
+  "block_type": "epoch",
+  "date": "2018-06-19 13:49:59.753408",
+  "epoch": 2,
+  "index": 17,
+  "previous_block_hash": "...",
+  "public_key": "...",
+  "signature": "...",
+  "slot": 1,
+  "transactions": []
+}
