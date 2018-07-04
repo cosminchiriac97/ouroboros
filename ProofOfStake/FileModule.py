@@ -2,12 +2,11 @@ import json
 import pickle
 
 ACCOUNTS_FILENAME = 'Outputs\miners_accounts.json'
-SECRET_SEEDS_PATH = 'Outputs\SecretSeeds\\'
-CONFIG_FILE_PATH = 'ConfigFiles\\'
+SECRET_SEEDS_PATH = '..\Outputs\SecretSeeds\\'
 ACCOUNTS_FILENAME_EXPERMIMENTS = '..\Outputs\miners_accounts.json'
 
 def init_accounts():
-    with open(ACCOUNTS_FILENAME, mode='w', encoding='utf-8') as f:
+    with open(ACCOUNTS_FILENAME_EXPERMIMENTS, mode='w', encoding='utf-8') as f:
         json.dump([], f)
 
 
@@ -17,11 +16,11 @@ def init_seeds(port):
         json.dump([], f)
 
 
-def append_account(account):
-    with open(ACCOUNTS_FILENAME, mode='r', encoding='utf-8') as accountsjson:
+def append_account(account, exp=False):
+    with open(ACCOUNTS_FILENAME_EXPERMIMENTS, mode='r', encoding='utf-8') as accountsjson:
         accounts = json.load(accountsjson)
 
-    with open(ACCOUNTS_FILENAME, mode='w', encoding='utf-8') as accountsjson:
+    with open(ACCOUNTS_FILENAME_EXPERMIMENTS, mode='w', encoding='utf-8') as accountsjson:
         accounts.append(account)
         json.dump(accounts, accountsjson)
 

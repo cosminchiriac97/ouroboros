@@ -40,11 +40,11 @@ _thread.start_new_thread(open_mine, (cont, ))
 # Step2: open rest of servers
 for port in PORTS:
     subprocess.Popen('python ../Server.py ' + port)
-    time.sleep(1)
+    time.sleep(3)
 time.sleep(2)
 # Get accounts
 for port in range(5000, 5010):
-    accounts.append(FileModule.get_account_by_port(port))
+    accounts.append(FileModule.get_account_by_port(port,True))
 
 # distributes the stack
 initial_transactions = []
@@ -71,7 +71,7 @@ for tran in initial_transactions:
     print(response.content)
 
 dd = date + datetime.timedelta(seconds=3*7*5)
-time.sleep(7*5*3)
+time.sleep(7*10*3)
 
 chains = []
 
@@ -87,7 +87,7 @@ block_count = {}
 for block in chains[0]['chain']:
     if block['block_type'] == 'genesis' and block['epoch'] > 1:
         for slot_leader in block['slot_leaders']:
-            if slot_leader['address'] in block:
+            if slot_leader['address'] in block_count:
                 block_count[slot_leader['address']] = block_count[slot_leader['address']] + 1
             else:
                 block_count[slot_leader['address']] = 1
